@@ -1,11 +1,13 @@
 #include "binary_trees.h"
-size_t count(binary_tree_t tree, counter)
+/**
+ * max- finds the maximum value between two numbers
+ * @a: first value
+ * @b: second value
+ * Return: the maximum
+ */
+size_t max(size_t a, size_t b)
 {
-	if (tree->right || tree->left)
-	{
-		counter++;
-	}
-	return (counter);
+	return ((a > b) ? a : b);
 }
 /**
  * binary_tree_height- determines the height of the tree.
@@ -14,7 +16,8 @@ size_t count(binary_tree_t tree, counter)
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t counter;
-
-	counter = count(tree, 0);
-	return (counter);
+	if (tree == NULL)
+		return (-1);
+	return (max(binary_tree_height(tree->left),
+				binary_tree_height(tree->right)) + 1);
+}
