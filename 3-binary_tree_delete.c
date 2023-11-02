@@ -5,9 +5,12 @@
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
+	binary_tree_t *right, *left;
 	if (tree == NULL)
 		return;
-	free(tree->right);
-	free(tree->left);
+	right = tree->right;
+	left = tree->left;
 	free(tree);
+	binary_tree_delete(right);
+	binary_tree_delete(left);
 }
