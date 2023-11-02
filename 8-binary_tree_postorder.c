@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "binary_trees.h"
 #include <stdio.h>
 /**
@@ -15,4 +16,8 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 	binary_tree_inorder(tree->left, func);
 	binary_tree_inorder(tree->right, func);
 	func(tree->n);
+=======
+void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
+{
+>>>>>>> facda81437a18cf9cf4653d859d2d4ba60bd15be
 }
